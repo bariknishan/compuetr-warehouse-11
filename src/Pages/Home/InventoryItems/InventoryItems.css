@@ -1,0 +1,21 @@
+.inventory-container{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    color: whitesmoke;
+    grid-gap:10px;
+}
+
+
+
+
+
+/* media query */
+
+@media only screen and (max-width:576px ){
+    .inventory-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .item-container{
+        width: 100% 
+    }
+}

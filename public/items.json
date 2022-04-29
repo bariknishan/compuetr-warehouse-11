@@ -16,7 +16,7 @@
         "price": "700",
         "quantity":200,
         "supplier":"JOHN DEK",
-        "description": "This mouse remaines smooth useable experience.Available in everywhere ",
+        "description": "This mouse remaines smooth useable experience.Available in everywhere.Available soon ",
         "img": "https://i.ibb.co/mCw1Vdm/item2.png"
     },
     {
@@ -34,25 +34,25 @@
         "price": "10000",
         "quantity":60,
         "supplier":"NISHAN KHAN",
-        "description": "New generation processor in stock now . Soon available on the market Place ",
+        "description": "New generation processor in stock now . Soon available on the market Place in every stock ",
         "img": "https://i.ibb.co/vYk8DBT/item4.png"
     },
     {
         "id": 5,
         "name": "APPLE MONITOR",
-        "price": "100",
+        "price": "100000",
         "quantity":50,
         "supplier":"JOHNY DEPP",
-        "description": "New apple monitor for mac user in now came with special edition on the market. ",
+        "description": "New apple monitor for mac user in now came with special edition on the market.Available soon ",
         "img": "https://i.ibb.co/12BzxCg/item5.png"
     },
     {
         "id": 6,
         "name": "LATEST RGB CASING",
-        "price": "300",
+        "price": "30000",
         "quantity":40,
         "supplier":"TAGY AGAR",
-        "description": "Latest  upgrated Casing is now availbale on stock. Soon availble on Market with low price",
+        "description": "Latest  upgrated Casing is now availbale on stock. Soon availble on Market with low price .Grab on!",
         "img": "https://i.ibb.co/P9wRNjK/item6.png"
     }
 ]

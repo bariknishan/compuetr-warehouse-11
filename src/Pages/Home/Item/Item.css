@@ -1,0 +1,20 @@
+
+ 
+ .item-container img{
+    height: 50%;
+    width: 50%;
+    
+   
+  } 
+
+  .item-area{
+      text-align: center;
+  }
+  
+  .des-area {
+      border: 2px solid yellow;
+      width: 50%;
+      margin: auto;
+      margin-top: 20px ;
+      margin-bottom: 10px;
+  }
