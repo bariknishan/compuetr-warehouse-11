@@ -12,13 +12,13 @@ const InventoryItems = () => {
     }, [])
     return (
         <div  >
-            <h1 className='text-center text-warning mt-4 mb-4'> INVENTORY ITEMS:{items.length}</h1>
+            <h1 className='text-center text-warning mt-4 mb-4 title-area'> INVENTORY ITEMS</h1>
 
             <div className='inventory-container'>
                 {
                     items.map(item => <Item
 
-                        key={item.key}
+                        key={item.id}
                         item={item}
 
                     ></Item>)
