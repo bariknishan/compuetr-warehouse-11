@@ -11,7 +11,7 @@ const InventoryItems = () => {
             .then(data => setItems(data))
     }, [])
     return (
-        <div  >
+        <div  id="inventoryitems" >
             <h1 className='text-center text-warning mt-4 mb-4 title-area'> INVENTORY ITEMS</h1>
 
             <div className='inventory-container'>

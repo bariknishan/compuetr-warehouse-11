@@ -1,0 +1,13 @@
+.login-container{
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+    border: 4px solid yellow;
+   
+} 
+          
+
+
+.signup {
+    cursor: pointer;
+}

@@ -7,7 +7,7 @@ import pic4 from '../../../images/service4 .png'
 
 const Services = () => {
     return (
-        <div className='service-container mt-4'>
+        <div  id="services" className='service-container mt-4'>
             
             <h1  className='text-center service-title   fw-bold text-warning mt-4'>SERVICE CRITERIA 2022</h1>
 
