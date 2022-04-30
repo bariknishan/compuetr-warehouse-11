@@ -21,6 +21,7 @@ function App() {
 <Route path='/newhome'   element={<NewHome></NewHome>}></Route>
 <Route path='/item/:id'   element={<InventoryDetail></InventoryDetail>}></Route>
 <Route path='/login'   element ={<Login></Login>}></Route>
+
 <Route path='/inventory'   element ={
 
   <RequireaAuth>

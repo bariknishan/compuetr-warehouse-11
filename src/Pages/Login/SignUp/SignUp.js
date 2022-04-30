@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init'
 import './SignUp.css'
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
@@ -12,16 +12,16 @@ import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 const SignUp = () => {
 
-
-
-
-
     const [
         createUserWithEmailAndPassword,
         user,
-
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+      
+    ] = useCreateUserWithEmailAndPassword(auth ,{sendEmailVerification:true});
+
+ /// update profile 
+ const [updateProfile, updating ,error2] = useUpdateProfile(auth);
+
 
 
 
@@ -36,33 +36,28 @@ const SignUp = () => {
     const navigate = useNavigate();
 
 
-
-
-
     const navigateLogin = () => {
         navigate('/login');
     }
 
     if (user) {
-        navigate('/newhome')
+       console.log(user)                           //
     }
 
-    const formHandleSignup = event => {
+    const formHandleSignup = async event => {
         event.preventDefault();
-
 
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        console.log(name, email, password)
+     
 
-        createUserWithEmailAndPassword(email, password, name);
+      await   createUserWithEmailAndPassword(email, password, name);
+      await updateProfile({ displayName:name})
 
+      
+      navigate('/newhome')
     }
-
-
-
-
 
 
     return (
@@ -91,13 +86,13 @@ const SignUp = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                <Button variant="primary" className='bg-warning text-dark fw-bold' type="submit">
-                    Submit
+                <Button variant="primary" className='bg-warning w-50 d-block mx-auto  text-dark fw-bold' type="submit">
+                    Sign  Up
                 </Button>
             </Form>
 
 
-            <p className='text-white mt-2' >Have an Acount ? <span onClick={navigateLogin} className='text-warning login '> Login Here  </span></p>
+            <p className='text-white mt-3  text-center' >Have an Acount ? <span onClick={navigateLogin} className='text-warning login '> Login Here  </span></p>
 
           <GoogleLogin></GoogleLogin>
 

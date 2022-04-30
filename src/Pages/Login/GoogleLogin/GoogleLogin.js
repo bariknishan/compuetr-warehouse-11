@@ -4,6 +4,7 @@ import logo from '../../../images/logo/google.png'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../SharedPages/Loading/Loading';
 
 
 const GoogleLogin = () => {
@@ -26,7 +27,9 @@ const GoogleLogin = () => {
         navivate('/newhome')
     }
 
- 
+ if(loading){
+     return<Loading></Loading>
+ }
 
     return (
         <div className='text-center'>
