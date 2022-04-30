@@ -2,27 +2,44 @@ import React, { useRef } from 'react';
 import './Login.css'
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Login = () => {
 
 
     const emailRef = useRef('');
     const passwordRef = useRef('')
-
     const navigate = useNavigate();
 
     const navigateSighup = () => {
-        navigate('/signup') ;
+        navigate('/signup');
     }
-     
+
+
+    // sign in method 
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+if(user){
+    navigate('/newhome')
+}
+
+
 
     const formHandleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        console.log(email, password)
+        // console.log(email, password)
+        signInWithEmailAndPassword(email, password)
+
     }
-   
+
 
 
     return (
@@ -47,7 +64,7 @@ const Login = () => {
                     Submit
                 </Button>
             </Form>
-            <p className='text-white mt-2' >New Here ? <span onClick={navigateSighup}  className='text-warning signup '> Sign Up</span></p>
+            <p className='text-white mt-2' >New Here ? <span onClick={navigateSighup} className='text-warning signup '> Sign Up</span></p>
         </div>
     );
 };
