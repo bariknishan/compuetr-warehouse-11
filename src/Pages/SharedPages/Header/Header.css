@@ -1,4 +1,18 @@
 .nav-container{
     padding: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+   
+}
+
+.btn{
+    color: white;
+    background: none;
+    font-size: 20px;
+    border: 2px solid yellow;
+    border-radius: 5px;
+}
+.login{
+    border: 2px solid yellow;
+    border-radius: 5px;
 }

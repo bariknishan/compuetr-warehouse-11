@@ -1,0 +1,10 @@
+
+
+.google-btn {
+    border: none;
+    border-radius: 10px;
+}
+
+.google-btn:hover {
+    background-color: aliceblue;
+}

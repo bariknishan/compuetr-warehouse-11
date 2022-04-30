@@ -6,21 +6,22 @@ import { useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init'
 import './SignUp.css'
+import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 
 
 const SignUp = () => {
 
 
-    
+
 
 
     const [
         createUserWithEmailAndPassword,
         user,
-       
+
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
 
 
 
@@ -34,32 +35,32 @@ const SignUp = () => {
 
     const navigate = useNavigate();
 
-   
 
-    
+
+
 
     const navigateLogin = () => {
         navigate('/login');
     }
 
-    if(user){
+    if (user) {
         navigate('/newhome')
     }
 
     const formHandleSignup = event => {
         event.preventDefault();
-    
 
-    const name = nameRef.current.value;
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-    console.log(name,email, password)
 
-    createUserWithEmailAndPassword(email,password,name);
+        const name = nameRef.current.value;
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        console.log(name, email, password)
+
+        createUserWithEmailAndPassword(email, password, name);
 
     }
 
-    
+
 
 
 
@@ -78,25 +79,30 @@ const SignUp = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control ref={emailRef}  type="email" name="email" placeholder="Enter email" id="" required />
+                    <Form.Control ref={emailRef} type="email" name="email" placeholder="Enter email" id="" required />
 
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control ref={passwordRef} type="password" name="password " placeholder="Password"   required />
+                    <Form.Control ref={passwordRef} type="password" name="password " placeholder="Password" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" className='bg-warning text-dark fw-bold' type="submit">
                     Submit
                 </Button>
             </Form>
 
+
             <p className='text-white mt-2' >Have an Acount ? <span onClick={navigateLogin} className='text-warning login '> Login Here  </span></p>
+
+          <GoogleLogin></GoogleLogin>
+
         </div>
+
     );
 };
 

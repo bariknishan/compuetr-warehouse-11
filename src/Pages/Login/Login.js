@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 import './Login.css'
 import { Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import GoogleLogin from './GoogleLogin/GoogleLogin';
 
 const Login = () => {
 
@@ -11,6 +12,8 @@ const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('')
     const navigate = useNavigate();
+
+
 
     const navigateSighup = () => {
         navigate('/signup');
@@ -25,9 +28,12 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-if(user){
-    navigate('/newhome')
-}
+     const location=useLocation()
+    let from = location.state?.from?.pathname || "/" ;
+
+    if (user) {
+        navigate(from , {replace: true})  /// login location 
+    }
 
 
 
@@ -43,7 +49,10 @@ if(user){
 
 
     return (
+
+        
         <div className=' login-container mx-auto w-50  text-white'>
+            
             <h1 className='text-center mt-4'>LOG IN HERE</h1>
 
             <Form className='login-form' onSubmit={formHandleSubmit}>
@@ -65,6 +74,7 @@ if(user){
                 </Button>
             </Form>
             <p className='text-white mt-2' >New Here ? <span onClick={navigateSighup} className='text-warning signup '> Sign Up</span></p>
+            <GoogleLogin></GoogleLogin>
         </div>
     );
 };
