@@ -35,15 +35,15 @@ const AddItem = () => {
 
     return (
 
-        <div className='w-25 mx-auto'>
-            <h2 className='text-white text-center mt-2'>Re stock Item</h2>
+        <div className='w-25 mx-auto border border-warning p-4 mt-4  '>
+            <h2 className='text-white text-center mt-2'> Stock Item</h2>
 
           
             <form  className=' d-flex flex-column mb-4' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-3'  placeholder='name' {...register("name", { required: true, maxLength: 20 })}/>
                 <input className='mb-3' placeholder='description'  {...register("description")} /> 
                 <input className='mb-3' placeholder='Phot URL'  type="text" {...register("img")} />
-                <input className='mb-3 '  type="submit" />
+                <input className='mb-3 bg-primary '  type="submit" />
             </form>
             
         </div>

@@ -1,8 +1,17 @@
 import React from 'react';
+import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 import useItems from '../../Hooks/UseItems';
 
 const ManageInventories = () => {
     const [items ,setItems] = useItems()
+
+
+
+   
+
+
     const deleteHandle = (id) => {
         const proceed = window.confirm(' Are You sure delete this item?')
 
@@ -38,7 +47,9 @@ const ManageInventories = () => {
                     <p>  price:{item.price} </p>
                     <p> quantity:{item.quantity}</p>
                     <p> Id:{item._id}</p>
-                    <button onClick={() => deleteHandle(item._id)} className='bg-warning'>Delete</button>
+                    <button onClick={() => deleteHandle(item._id)} className='bg-warning p-1 w-25 fw-bold'>Delete Item</button>
+                   <br />
+                  <  Link  to="/additems" > <button className=' bg-primary mt-2 p-1 w-25 fw-bold'>Add Item</button></Link>
                 </div>)
 
             }

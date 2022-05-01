@@ -33,7 +33,7 @@ const Inventory = () => {
     return (
 
         <div className='w-25 mx-auto  ' >
-            <h2 className='text-center text-white mt-2'> Inventory Re stock or Add Item </h2>
+            <h2 className='text-center text-white mt-2'> Inventory Re stock  </h2>
 
 
             <form className=' d-flex flex-column mb-4' onSubmit={handleSubmit(onSubmit)}>
