@@ -4,7 +4,7 @@ import './Item.css';
 
 
 const Item = ({ item }) => {
-    const {id, name, img, price, supplier, description, quantity } = item;
+    const {_id, name, img, price, supplier, description, quantity } = item;
 
  const navigate= useNavigate()
 
@@ -26,7 +26,7 @@ const Item = ({ item }) => {
             <p>quantity:{quantity}</p>
             <p>Supplier:{supplier}</p>
             <p><small>{description}</small></p>
-            <button onClick={()=> navigateToRouteDetail(id) }  className=' button p-2 bg-warning w-25 border-0 fw-bold mb-4'> UPDATE</button>
+            <button onClick={()=> navigateToRouteDetail(_id) }  className=' button p-2 bg-warning w-25 border-0 fw-bold mb-4'> UPDATE</button>
         </div>
            
         </div>

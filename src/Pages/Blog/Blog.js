@@ -28,7 +28,7 @@ const Blog = () => {
 
                 <p>Node js is a open source server environment for javascript and </p>
                 <p>whenever we need strong but multidata loaded system for our backend</p>
-                <p>we should use node. It makes Large application a nd can load many data on server </p>
+                <p>we should use node. It makes Large application and can load many data on server </p>
 
                 <p>Sometimes we want user data in unstrutured way in short time into our Database.</p>
                 <p>And MongoDB helps jus to do this task bacause mongo is NOSQL  database system </p>
