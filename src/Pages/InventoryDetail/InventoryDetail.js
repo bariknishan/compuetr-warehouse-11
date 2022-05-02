@@ -3,12 +3,12 @@ import { Link, useParams } from 'react-router-dom';
 
 const InventoryDetail = () => {
 
-    const {id}= useParams() ;
+    const {id }= useParams() ;
     const [item, setItems]= useState({});
-
+  
     useEffect(()=>{
 
-        const url =`http://localhost:5000/items/${id}`
+        const url =`https://calm-plains-65259.herokuapp.com/items/${id}`
         fetch(url)
         .then(res=>res.json())
         .then(data=>setItems(data))
@@ -23,7 +23,7 @@ const InventoryDetail = () => {
        
        <p  className='text-white ' > ID:{item._id}</p>
       
-       <p  className='text-white ' > Quantity:{item.quantity}</p>
+       <p  className='text-white ' > Quantity:{item.quantity -1}</p>
        <p  className='text-white ' > price:{item.price}</p>
        <p  className='text-white ' > price:{item.description}</p>
      

@@ -7,7 +7,7 @@ const AddItem = () => {
     const onSubmit = data => {
         console.log(data);
 
-       const url =` http://localhost:5000/items` ;
+       const url =` https://calm-plains-65259.herokuapp.com/items` ;
 
        fetch(url, {
            method:'POST',
